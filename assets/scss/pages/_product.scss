@@ -1,0 +1,51 @@
+// break point setting
+@mixin pad {
+    @media(max-width:992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width:576px) {
+        @content;
+    }
+}
+
+// section of product
+
+section.product {
+}
+.product-type {
+
+    li {
+        width: calc(100% /3);
+        display: flex;
+        justify-content: center;
+        a {
+            display: block;
+            font-size: 32px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        &.active{
+            border-bottom: 2px solid ;
+        }
+    }
+}
+.product-banner{
+    padding-bottom: 80px;
+}
+.product-list{
+    .title{
+        padding-bottom: 32px;
+        h2,h3{
+            text-align: center;
+            color:black;
+            font-size: 42px;
+        }
+        h2{
+            font-size: 32px;
+            font-weight: 300;
+        }
+    }
+}

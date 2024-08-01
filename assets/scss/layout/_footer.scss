@@ -1,0 +1,141 @@
+// break point setting
+@mixin pad {
+  @media(max-width:992px) {
+      @content;
+  }
+}
+
+@mixin mobile {
+  @media(max-width:576px) {
+      @content;
+  }
+}
+
+// footer
+
+.footer {
+  background-color: $primary-color;
+
+  * {
+      color: white;
+      font-weight: 300;
+  }
+
+  padding-top: 60px;
+  @include mobile{
+      padding-top: 24px;
+  }
+
+  .footer-info {
+      .map{
+          @include mobile{
+              display: none;
+          }
+      }
+      .map li {
+          height: 50px;
+          margin-left: -24px;
+
+          a {
+              padding: 24px;
+              text-decoration: none;
+          }
+      }
+
+      .contact {
+          .contact-item {
+              margin-bottom: 16px;
+              
+
+              span,
+              a {
+                  font-size: 36px;
+                  line-height: 1;
+                  text-decoration: none;
+                
+                  @include pad{
+                      font-size: 22px;
+                  }
+                  @include mobile{
+                      font-size: 16px;
+                      margin-bottom: 8px;
+                  }
+              }
+
+              span {
+                  margin-right: 22px;
+                  @include mobile{
+                      margin-right: 11px;
+                  }
+              }
+          }
+
+      }
+  }
+
+  .footer-social-media {
+      li {
+          &:last-child a {
+              padding-right: 0;
+          }
+
+          a {
+              padding-right: 32px;
+              @include pad{
+                 padding-right: 16px;
+              }
+              @include mobile{
+                 padding-right: 8px;
+              }
+
+              img {
+                  width: 48px;
+                  height: 48px;
+                  @include pad{
+                      width: 40px;
+                      height: 40px;
+                  }
+                  @include mobile{
+                      width: 24px;
+                      height: 24px;
+                  }
+              }
+          }
+      }
+
+
+  }
+
+  .footer-copyright {
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+
+      @include pad{
+          padding: 20px 0;
+      }
+      @include mobile{
+          padding: 24px 0;
+          flex-direction: column;
+      }
+      .license-group {
+          @include mobile{
+              margin-top: 4px;
+          }
+          a {
+              padding: 24px;
+              text-decoration: none;
+              line-height: 1.5;
+
+              &:last-child {
+                  padding-right: 0;
+              }
+              @include mobile{
+                  display: block;
+                  padding: 4px 4px 4px 0;
+              }
+
+          }
+      }
+  }
+}

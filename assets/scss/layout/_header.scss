@@ -1,0 +1,85 @@
+// break point setting
+@mixin pad {
+    @media(max-width:992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width:576px) {
+        @content;
+    }
+}
+
+// navbar
+
+.navbar {
+    background-color: $primary-color;
+    padding: 16px 0;
+
+    .container-sm-full {
+        @include mobile {
+            padding: 0;
+            margin-bottom: -16px;
+        }
+
+
+    }
+
+    .logo {
+        @include mobile {
+            padding: 15px 0;
+            margin-left: 12px;
+        }
+
+        img {
+            width: 80px;
+            height: 48px;
+        }
+    }
+
+    .navbar-items-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .navbar-items {
+            &:last-child a {
+                padding-right: 0;
+            }
+
+            @include mobile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 48px;
+                border: white 1px solid;
+
+                &:last-child a {
+                    padding-right: 24px;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 12px 24px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 100;
+
+                @include mobile {
+                    font-size: 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
