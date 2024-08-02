@@ -1,0 +1,111 @@
+// break point setting
+@mixin pad {
+    @media(max-width:992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width:576px) {
+        @content;
+    }
+}
+
+// section of address
+
+
+
+.input-group {
+    margin-bottom: 40px;
+
+    @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    label {
+        font-size: 24px;
+        margin-right: 16px;
+
+        @include mobile {
+            font-size: 16px;
+            margin-right: 0;
+        }
+    }
+
+    select {
+        width: 304px;
+        padding: 6px 12px;
+        border: 1px solid #CED4DA;
+        color: #495057;
+        font-size: 18px;
+
+        @include mobile {
+            width: 75%;
+        }
+    }
+}
+
+.shop-items {
+    margin-bottom: 48px;
+
+    @include pad {
+        margin-bottom: 24px;
+    }
+
+    img {
+        height: 224px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .shop-name,
+    .shop-info {
+        border: 1px #00000020 solid;
+
+
+        p {
+            color: #212529;
+        }
+    }
+
+    .shop-name {
+        padding: 8px 24px;
+
+        p {
+            font-size: 24px;
+        }
+    }
+
+    .shop-info {
+        padding: 16px 24px 8px 24px;
+
+        li {
+            margin-bottom: 8px;
+            margin-left: 32px;
+            position: relative;
+            line-height: 1.5;
+
+            span {
+                vertical-align: middle;
+                position: absolute;
+                top: 0;
+                font-size: 20px;
+                left: -30px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 16px 0;
+        background-color: black;
+        font-size: 19px;
+    }
+}

@@ -48,6 +48,7 @@ nav.product-type {
 
 .product-banner {
     padding-bottom: 80px;
+
     @include mobile{
         padding-bottom: 40px;
     }
@@ -56,6 +57,7 @@ nav.product-type {
         width: 50%;
         height: 296px;
         object-fit: cover;
+       
         @include mobile{
             height: 136px;
         }
@@ -97,10 +99,18 @@ nav.product-type {
             }
         }
     }
+    .pagination{
+        @include pad{
+            margin-top: 40px;
+        }
+    }
 }
 
 .product-items {
     margin-bottom: 80px;
+    @include pad{
+        margin-bottom: 40px;
+    }
     @include mobile{
         margin-bottom: 24px;
     }
@@ -112,9 +122,11 @@ nav.product-type {
     p {
         font-size: 24px;
         display: flex;
+        font-family: Roboto;
         span{
             color:$primary-color;
             margin-left: auto;
+            font-weight: 500;
         }
     }
 
